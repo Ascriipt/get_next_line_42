@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparigi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 19:35:42 by maparigi          #+#    #+#             */
-/*   Updated: 2022/02/16 10:48:21 by maparigi         ###   ########.fr       */
+/*   Updated: 2022/09/07 20:05:34 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ char	*get_next_line(int fd)
 			break ;
 		buffer[len] = '\0';
 		stash = ft_strjoin(stash, buffer, -1, -1);
+		if (!stash)
+			return (NULL);
 	}
 	line = ft_fill_line(stash);
 	stash = ft_get_next(stash);
